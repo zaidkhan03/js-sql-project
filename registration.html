@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABC College - Register</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>ABC College of Science And Technology</h1>
+      <p>Srinagar, Jammu & Kashmir</p>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="registration.html" class="nav-link">Register</a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Registration Form</h2>
+      <form id="reg-form">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required />
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required />
+
+        <label for="class">Class to Register For</label>
+        <input type="text" id="class" name="class" required />
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="parentName">Parent/Guardian Name</label>
+        <input type="text" id="parentName" name="parentName" required />
+
+        <label for="address">Current Address</label>
+        <input type="text" id="address" name="address" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <button type="submit" id="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
