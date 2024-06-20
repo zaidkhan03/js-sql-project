@@ -8,36 +8,50 @@ const phone = document.querySelector("#phone");
 const email = document.querySelector("#email");
 const submit = document.querySelector("#submit");
 
-const data = [];
-let student = {};
-
-firstName.addEventListener(
-  "change",
-  (e) => (student.firstName = e.target.value)
-);
-lastName.addEventListener("change", (e) => (student.lastName = e.target.value));
-grade.addEventListener("change", (e) => (student.grade = e.target.value));
-dob.addEventListener("change", (e) => (student.dob = e.target.value));
-address.addEventListener("change", (e) => (student.address = e.target.value));
-phone.addEventListener("change", (e) => (student.phone = e.target.value));
-email.addEventListener("change", (e) => (student.email = e.target.value));
-parentName.addEventListener(
-  "change",
-  (e) => (student.parentName = e.target.value)
-);
-
-submit.addEventListener("click", (e) => {
+submit.addEventListener("click", async (e) => {
   e.preventDefault();
-  data.push(student);
-  student = {};
-  firstName.value = "";
-  lastName.value = "";
-  grade.value = "";
-  dob.value = "";
-  parentName.value = "";
-  address.value = "";
-  phone.value = "";
-  email.value = "";
-  console.log(data);
-  console.log(student);
+  if (
+    !firstName.value ||
+    !lastName.value ||
+    !grade.value ||
+    !dob.value ||
+    !parentName.value ||
+    !address.value ||
+    !phone.value ||
+    !email.value
+  ) {
+    alert("All fields are required.");
+    return;
+  }
+
+  const person = {
+    firstName: firstName.value,
+    lastName: lastName.value,
+    grade: grade.value,
+    dob: dob.value,
+    parentName: parentName.value,
+    address: address.value,
+    phone: phone.value,
+    email: email.value,
+  };
+
+  await fetch("http://localhost:3005/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(person),
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      firstName.value = "";
+      lastName.value = "";
+      grade.value = "";
+      dob.value = "";
+      parentName.value = "";
+      address.value = "";
+      phone.value = "";
+      email.value = "";
+    })
+    .catch((error) => console.error("Error:", error));
 });
