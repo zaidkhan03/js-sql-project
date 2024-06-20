@@ -42,7 +42,12 @@ submit.addEventListener("click", async (e) => {
     },
     body: JSON.stringify(person),
   })
-    .then((response) => response.text())
+    .then((response) => {
+      if (response.status === 409) {
+        alert("Email or phone number already in use");
+      }
+      return response.text();
+    })
     .then((data) => {
       firstName.value = "";
       lastName.value = "";
