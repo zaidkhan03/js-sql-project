@@ -1,0 +1,53 @@
+.c-item {
+
+    height: 400px;
+}
+
+.c-img {
+
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.dep {
+
+    border: 2px inset black;
+    border-radius: 20px;
+    margin: 0px 300px 0px 50px;
+    padding: 10px 20px;
+}
+
+.dep:hover {
+
+    color: grey;
+}
+
+.nvl:link {
+
+    color: black;
+}
+
+.nvl:hover {
+
+    color: grey;
+}
+
+.f {
+
+    border: 2px inset black;
+    border-radius: 5px;
+    margin: 0px 300px 0px 50px;
+    padding: 10px 20px;
+}
+
+.nb {
+
+    border: 3px outset black;
+    border-radius: 10px;
+}
+
+.nvl {
+
+    font-weight: bold;
+}

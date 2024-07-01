@@ -44,7 +44,7 @@ submit.addEventListener("click", async (e) => {
   })
     .then((response) => {
       if (response.status === 409) {
-        alert("Email or phone number already in use");
+        alert("Email or Phone Number already in use");
       }
       return response.text();
     })

@@ -78,8 +78,7 @@ app.post("/submit", async (req, res) => {
       phone,
       email,
     } = req.body;
-
-    const checkQuery = `SELECT * FROM students WHERE email = ? OR phone = ?`;
+    const checkQuery = `SELECT * FROM students WHERE email = ? OR Phone = ?`;
     pool.query(checkQuery, [email, phone], (err, results) => {
       if (err) {
         console.error("Error checking data:", err);
@@ -87,7 +86,7 @@ app.post("/submit", async (req, res) => {
         return;
       }
       if (results.length > 0) {
-        res.status(409).send("Email or phone number already in use");
+        res.status(409).send("Email or Phone Number already in use");
         return;
       }
 

@@ -1,0 +1,25 @@
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+
+    box-shadow: 2px 6px 100px black;
+    border: 3px inset black;
+    border-radius: 50px;
+}
+
+.ip {
+
+    border: 3px inset black;
+    border-radius: 10px;
+}
+
+.lb {
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
